@@ -36,7 +36,8 @@ Book.findById = (id, result) => {
 // Membuat data buku baru
 Book.create = (newBook, result) => {
  console.log(newBook);
- sql.query("INSERT INTO books (title, description, images)VALUES (?,?,?)",[newBook.title, newBook.description, newBook.images], (err, res) => {
+ sql.query("INSERT INTO books (title, description, images) VALUES (?,?,?)",[newBook.title, newBook.description, newBook.images], (err,
+    res) => {
      if (err) {
      console.log("error: ", err);
      result(err, null);
@@ -83,17 +84,17 @@ Book.create = (newBook, result) => {
      }
      console.log("hapus buku dengan id: ", id);
      result(null, res);
-     });
-    };
-    // Menghapus semua buku
-    Book.removeAll = result => {
-     sql.query("DELETE FROM Books", (err, res) => {
-     if (err) {
-     console.log("error: ", err);
-     result(null, err);
-     return;
-     }
-     console.log(`Menghapus ${res.affectedRows} buku`);
-     result(null, res);
-     });
-    };
+     });};
+     // Menghapus semua buku
+     Book.removeAll = result => {
+      sql.query("DELETE FROM Books", (err, res) => {
+      if (err) {
+      console.log("error: ", err);
+      result(null, err);
+      return;
+      }
+      console.log(`Menghapus ${res.affectedRows} buku`);
+      result(null, res);
+      });
+     };
+     module.exports = Book;

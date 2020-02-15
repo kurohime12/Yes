@@ -4,13 +4,6 @@ module.exports = app => {
    http://polibatam.ac.id/img/perpustakaan.png
     // Mengambil semua data
     app.get("/api/books", books.findAll);
-   };
-   module.exports = app => {
-    const books = require("../controllers/book.controller");
-    // cara mengakses gambar
-   http://polibatam.ac.id/img/perpustakaan.png
-    // Mengambil semua data
-    app.get("/api/books", books.findAll);
     // Mengambil data buku yang memiliki id = id
     app.get("/api/books/:id", books.findOne);
     // Membuat buku baru
