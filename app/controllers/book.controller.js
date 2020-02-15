@@ -1,4 +1,4 @@
-const Book = require("../models/book.model");
+const Book = require("../models/book.model.js");
 //Mengambil semua data buku
 exports.findAll = (req, res) => {
  Book.getAll((err, data) => {
